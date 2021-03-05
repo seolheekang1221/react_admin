@@ -37,8 +37,16 @@ export default class MembersStore {
   }
 
   membersUpdate(index, member) {
-    this.members[index] = member;
-    console.log('Done membersUpdate', this.members);
+    const memberUpdate = {
+      index: index,
+      member: member,
+    }
+    axios.patch('http://localhost:3100/api/v1/members', memberUpdate).then((response) => {
+      console.log('Done membersUpdate', response);
+      this.membersRead();
+    }).catch((error) => {
+      axiosError(error);
+    });
   }
 
   membersDelete(index) {
