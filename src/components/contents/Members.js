@@ -1,8 +1,12 @@
+import { useEffect } from 'react';
 import { inject, observer } from 'mobx-react';
 
 function Members(props) {
   const { membersStore } = props;
-  const { member } = membersStore;
+  const { members, member } = membersStore;
+  useEffect(() => {
+    membersStore.membersRead();
+  }, [membersStore]);
   return (
     <div>
       <h3>Members</h3>
@@ -18,14 +22,16 @@ function Members(props) {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>홍길동</td>
-              <td>20</td>
+          {members.map((member, index) => (
+            <tr key={index}>
+              <td>{member.name}</td>
+              <td>{member.age}</td>
               <td>
                 <button>Update</button>
                 <button>Delete</button>
               </td>
             </tr>
+          ))}
           </tbody>
         </table>
       </div>
