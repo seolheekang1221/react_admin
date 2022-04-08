@@ -1,9 +1,8 @@
 import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Header from './components/Header.js';
-import Nav from './components/Nav.js';
 import Footer from './components/Footer.js';
-import Members from './components/contents/Members.js';
-import Search from './components/contents/Search.js';
+import Drugs from './components/contents/Drugs.js';
+import Login from './components/contents/Login.js';
 
 function App() {
   return (
@@ -12,13 +11,12 @@ function App() {
         <Header></Header>
         <hr />
         <div className="container">
-          <Nav></Nav>
           <hr />
           <section className="contents">
             <Switch>
-              <Route exact={true} path="/members" render={props => <Members {...props} testProps={true} />} />
-              <Route exact={true} path="/search" component={Search} />
-              <Redirect to={{pathname: "/members"}} />
+              <Route exact={true} path="/login" component={Login} />
+              <Route exact={true} path="/drugs" render={props => <Drugs {...props} testProps={true} />} />
+              <Redirect to={{ pathname: "/login" }} />
             </Switch>
           </section>
           <hr />

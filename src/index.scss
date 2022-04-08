@@ -61,3 +61,34 @@ input[type=text] {
   border-top: 1px solid rgb(118, 118, 118);
   min-width: 100px;
 }
+
+.login {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login form div {
+  margin: 0.5rem;
+}
+.login input {
+  width: 120px;
+}
+.login .login-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header h1 {
+  flex: 1;
+}
+header button {
+  margin: 0.5rem;
+}

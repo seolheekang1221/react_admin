@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'mobx-react';
-import { membersStore } from './stores/MembersStore.js';
-import { searchStore } from './stores/SearchStore';
+import {
+  Provider
+} from 'mobx-react';
+import {
+  drugsStore
+} from './stores/DrugsStore.js';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider
-      membersStore={membersStore}
-      searchStore={searchStore}
-    >
+    <Provider drugsStore={drugsStore}>
       <App />
     </Provider>
   </React.StrictMode>,

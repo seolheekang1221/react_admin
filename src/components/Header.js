@@ -1,7 +1,7 @@
 function Header() {
   return (
     <header>
-      <h1>React study</h1>
+      <h1>Seolhee Kang React Final</h1>
     </header>
   )
 }
